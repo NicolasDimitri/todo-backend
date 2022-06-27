@@ -25,5 +25,6 @@ const updateTodo = async (id, todo) => {
 
 module.exports = {
     getAllTodos,
-    deleteTodo
+    deleteTodo,
+    updateTodo
 };
