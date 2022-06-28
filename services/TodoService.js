@@ -8,8 +8,8 @@ const getAllTodos = async () => {
 const deleteTodo = async (id) => {
     const todo = await Todo.destroy({
         where: {
-            id
-        }
+            id,
+        },
     });
     return todo;
 };
@@ -17,8 +17,8 @@ const deleteTodo = async (id) => {
 const updateTodo = async (id, todo) => {
     const updatedTodo = await Todo.update(todo, {
         where: {
-            id
-        }
+            id,
+        },
     });
     return updatedTodo;
 };
@@ -26,5 +26,5 @@ const updateTodo = async (id, todo) => {
 module.exports = {
     getAllTodos,
     deleteTodo,
-    updateTodo
+    updateTodo,
 };

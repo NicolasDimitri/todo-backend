@@ -13,7 +13,7 @@ const deleteTodo = async (req, res) => {
 
 const updateTodo = async (req, res) => {
     const { id } = req.params;
-    const { title, completed } = req.body;
+    const { title,completed } = req.body;
     const todo = await TodoService.updateTodo(id, title, completed);
     return res.status(200).json(todo);
 };
