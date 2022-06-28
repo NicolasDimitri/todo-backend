@@ -18,9 +18,16 @@ const updateTodo = async (req, res) => {
     return res.status(200).json(todo);
 };
 
+const createTodo = async (req, res) => {
+    const { title, completed } = req.body;
+    const todo = await TodoService.createTodo(title, completed);
+    return res.status(200).json(todo);
+};
+
 module.exports = {
     getAllTodos,
     deleteTodo,
     updateTodo,
+    createTodo,
 };
 
