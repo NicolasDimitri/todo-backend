@@ -23,8 +23,14 @@ const updateTodo = async (id, todo) => {
     return updatedTodo;
 };
 
+const createTodo = async (todo) => {
+    const newTodo = await Todo.create(todo);
+    return newTodo;
+};
+
 module.exports = {
     getAllTodos,
     deleteTodo,
     updateTodo,
+    createTodo,
 };

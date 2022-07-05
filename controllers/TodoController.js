@@ -13,15 +13,14 @@ const deleteTodo = async (req, res) => {
 
 const updateTodo = async (req, res) => {
     const { id } = req.params;
-    const { title,completed } = req.body;
-    const todo = await TodoService.updateTodo(id, title, completed);
-    return res.status(200).json(todo);
+    const { todo,completed } = req.body;
+    const result = await TodoService.updateTodo(id, todo, completed);
+    return res.status(200).json(result);
 };
 
 const createTodo = async (req, res) => {
-    const { title, completed } = req.body;
-    const todo = await TodoService.createTodo(title, completed);
-    return res.status(200).json(todo);
+    const result = await TodoService.createTodo(req.body);
+    return res.status(200).json(result);
 };
 
 module.exports = {

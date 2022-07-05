@@ -1,6 +1,7 @@
 const Todo = (sequelize, DataTypes) => {
     const Todo = sequelize.define('Todo', {
-        todo: DataTypes.STRING
+        todo: DataTypes.STRING,
+        completed: DataTypes.BOOLEAN,
     });
     return Todo;
 };
